@@ -110,14 +110,14 @@ window.onload = function () {
         console.log(item.icon);
         key = index;
         socialCards += `
-        <article className='social'>
-            <div className='social__handle'>
+        <article class='social'>
+            <div class='social__handle'>
                 <img src='${item.icon}' alt=''>
                 <p>${item.handle}</p>
             </div>
             <h2>${item.followers}</h2>
             <p>${item.description}</p>
-            <div className='social__updates'>
+            <div class='social__updates'>
                 <img src='${item.arrow}'>
                 <p class='${
                 item.arrow === iconDown
@@ -134,14 +134,14 @@ window.onload = function () {
     overviewData.map((item, index) => {
         key = index;
         overviewCards += `
-        <article className='overview'>
-            <div className='overview__title'>
+        <article class='overview'>
+            <div class='overview__title'>
                 <p>${item.title}</p>
                 <img src='${item.icon}' alt=''>
             </div>
-            <div className='overview__numbers'>
+            <div class='overview__numbers'>
                 <h3>${item.count}</h3>
-                <div className='overview__percentage'>
+                <div class='overview__percentage'>
                     <img src='${item.arrow}' alt=''>
                     <p>${item.percentage}</p>
                 </div>

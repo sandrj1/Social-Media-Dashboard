@@ -3,4 +3,7 @@ node_modules
 *.xd
 *.fig
 .DS_Store
+
 *.md
+development
+.cache

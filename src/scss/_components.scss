@@ -5,7 +5,7 @@
 .container {
     p {
         color: base.light(dark-grayish-blue);
-        font-weight: weight(bold);
+        font-weight: base.weight(bold);
     }
 }
 
@@ -46,4 +46,102 @@
 }
 
 // Social Cards
+.social {
+    margin-bottom: 1.5em;
+    border-radius: 4px;
+    background: base.light(light-grayish-blue);
 
+    &--facebook {
+        border-top: 4px solid base.$facebook;
+    }
+
+    &--twitter {
+        border-top: 4px solid base.$twitter;
+    }
+
+    &--instagram {
+        border-top: 4px solid base.$twitter;
+    }
+
+    &--youtube {
+        border-top: 4px solid base.$youTube;
+    }
+
+    #{&}__handle {
+        margin: 2em 0 1.25em;
+
+        img {
+            margin-right: 0.5em;
+        }
+    }
+
+    h2 {
+        font-size: 3.75em;
+    }
+
+    #{&}__description {
+        margin-bottom: 2em;
+        font-weight: base.weight(default);
+        text-transform: uppercase;
+        letter-spacing: 0.3em;
+    }
+
+    #{&}__updates {
+        margin-bottom: 2em;
+
+        img {
+            margin-right: 0.35em;
+        }
+
+        .arrow--green {
+            color: base.$lime-green;
+        }
+
+        .arrow--red {
+            color: base.$bright-red;
+        }
+    }
+}
+
+// Overview Cards
+
+section h2 {
+    margin: 0.75em 0 1em;
+    font-size: 1.75em;
+    color: base.light(dark-grayish-blue);
+}
+
+.overview {
+    margin-bottom: 1em;
+    border-radius: 4px;
+    background: base.light(light-grayish-blue);
+
+    #{&}__title {
+        margin: 1.8em 0 1.5em;
+
+        p {
+            font-size: 1.05em;
+        }
+    }
+
+    #{&}__numbers {
+        margin-bottom: 1.5em;
+        h3 {
+            font-size: 2.25em;
+        }
+    }
+
+    #{&}__percentage {
+        img {
+            margin-right: 0.35em;
+        }
+
+        .arrow--green {
+            color: base.$lime-green;
+        }
+
+        .arrow--red {
+            color: base.$bright-red;
+        }
+    }
+}

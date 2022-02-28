@@ -1,15 +1,1 @@
 @forward './imports';
-$main-color: purple;
-
-body {
-    background: lighten($main-color, 70%);
-}
-
-li {
-    color: $main-color;
-    font-size: 25px;
-}
-
-.social {
-    background: green;
-}

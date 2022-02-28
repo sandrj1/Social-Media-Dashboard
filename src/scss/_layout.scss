@@ -7,7 +7,7 @@ body {
 
 .container {
     @include base.flexCenter(center, column);
-    width: 90%;
+    width: 87.5%;
     margin: 2em 0;
 }
 
@@ -26,4 +26,26 @@ header, main {
 
 .social__container, .overview__container {
     @include base.flexCenter(center, column);
+}
+
+article {
+    @include base.flexCenter(center, column);
+    width: 100%;
+}
+
+.social {
+    #{&}__handle, #{&}__updates {
+        @include base.flexCenter(center, row);
+    }
+}
+
+.overview {
+    #{&}__title, #{&}__numbers {
+        @include base.flexCenter(space-between, row);
+        width: 87.5%;
+    }
+
+    #{&}__percentage {
+        @include base.flexCenter(center, row);
+    }
 }
