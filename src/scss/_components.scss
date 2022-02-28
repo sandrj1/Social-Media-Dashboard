@@ -1,0 +1,49 @@
+/* everything that is reusable – buttons, navbars, cards, and so on */
+@use './base';
+
+// General
+.container {
+    p {
+        color: base.light(dark-grayish-blue);
+        font-weight: weight(bold);
+    }
+}
+
+// Header
+.header__title {
+    border-bottom: 1px solid base.light(dark-grayish-blue);
+
+    h1 {
+        font-size: 1.75em;
+        color: base.light(very-dark-blue);
+    }
+
+    p {
+        margin: 0.35em 0 1.75em;
+        font-size: 1.05em;
+    }
+}
+
+.header__switcher {
+    p {
+        font-size: 1.05em;
+    }
+
+    .toggle__container {
+        width: 3.5em;
+        height: 1.75em;
+        border-radius: 40px;
+        background: base.light(toggle);
+
+        .toggle {
+            width: 1.3em;
+            height: 1.3em;
+            margin-right: 0.3em;
+            border-radius: 40px;
+            background: base.light(color-white);
+        }
+    }
+}
+
+// Social Cards
+

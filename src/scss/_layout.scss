@@ -1,0 +1,29 @@
+/* all the Sass code handling the layout, which is the container and grid systems */
+@use './base';
+
+body {
+    @include base.flexCenter(center, column);
+}
+
+.container {
+    @include base.flexCenter(center, column);
+    width: 90%;
+    margin: 2em 0;
+}
+
+header, main {
+    width: 100%;
+}
+
+.header__switcher {
+    @include base.flexCenter(space-between, row);
+    margin: 1.5em 0 3em;
+
+    .toggle__container {
+        @include base.flexCenter(flex-end, row);
+    }
+}
+
+.social__container, .overview__container {
+    @include base.flexCenter(center, column);
+}

@@ -1,0 +1,22 @@
+{
+  "name": "social-media-dashboard",
+  "version": "1.0.0",
+  "description": "![Design preview for the Social media dashboard with theme switcher coding challenge](./design/desktop-preview.jpg)",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5",
+    "sass": "^1.49.9"
+  },
+  "dependencies": {
+    "img": "^3.0.3",
+    "s": "^1.0.0",
+    "scss": "^0.2.4"
+  }
+}
