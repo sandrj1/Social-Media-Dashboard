@@ -1,27 +1,63 @@
 /* everything that is reusable – buttons, navbars, cards, and so on */
+
 @use './base';
 
 // General
 .container {
+    @include base.transition(background-color);
+    background: base.light(color-white);
+
+    &.dark {
+        @include base.transition(background-color);
+        background: base.dark(very-dark-blue);
+    }
+
+    h1, h2, h3 {
+        @include base.transition(color);
+        color: base.light(very-dark-blue);
+    }
+
+    h1.dark, h2.dark, h3.dark {
+        @include base.transition(color);
+        color: base.dark(color-white);
+    }
+
     p {
+        @include base.transition(color);
         font-weight: base.weight(bold);
         color: base.light(dark-grayish-blue);
+
+        &.dark {
+            @include base.transition(color);
+            color: base.dark(desaturated-blue);
+        }
     }
 }
 
 // Header
 header {
+    @include base.transition(background-color);
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     background: base.light(very-pale-blue);
+
+    &.dark {
+        @include base.transition(background-color);
+        background: base.dark(dark-blue);
+    }
 }
 
 .header__title {
+    @include base.transition(border-bottom);
     border-bottom: 1px solid base.light(dark-grayish-blue);
+
+    &.dark {
+        @include base.transition(border-color);
+        border-color: base.dark(desaturated-blue);
+    }
 
     h1 {
         font-size: 1.75em;
-        color: base.light(very-dark-blue);
     }
 
     p {
@@ -36,6 +72,7 @@ header {
     }
 
     .toggle__container {
+        @include base.transition(background-color);
         position: relative;
         z-index: 1;
         width: 3.5em;
@@ -44,6 +81,17 @@ header {
         background: base.light(toggle);
         -webkit-tap-highlight-color: transparent;
         cursor: pointer;
+
+        &.dark {
+            background: linear-gradient(to right, base.dark(toggle-left), base.dark(toggle-right));
+            transition: background-color 0.4s ease-in-out, opacity 0.4s ease-in-out;
+            @media (hover:hover) {
+                    &:hover {
+                        @include base.transition(opacity);
+                        opacity: 0.75;
+                    }
+                }
+        }
 
         &::before {
             position: absolute;
@@ -66,11 +114,20 @@ header {
         }
 
         .toggle {
+            @include base.toggle;
             width: 1.3em;
             height: 1.3em;
             margin-right: 0.3em;
             border-radius: 40px;
             background: base.light(color-white);
+            transform: translateX(0);
+
+            &.dark {
+                @include base.toggle;
+                margin-right: 0.6em;
+                background: base.dark(dark-blue);
+                transform: translateX(-100%);
+            }
         }
     }
 }
@@ -91,27 +148,42 @@ header {
         &--facebook {
             background: base.$facebook;
         }
+
         &--twitter {
             background: base.$twitter;
         }
+
         &--instagram {
             background: linear-gradient(to right, base.$instagram-left, base.$instagram-right);
         }
+
         &--youtube {
             background: base.$youtube;
         }
     }
 
     #{&}__box {
+        @include base.transition(background-color);
         border-bottom-left-radius: 7.5px;
         border-bottom-right-radius: 7.5px;
         background: base.light(light-grayish-blue);
-        transition: background-color 0.4s ease-in-out;
 
-        @media (hover:hover){
+        &.dark {
+            @include base.transition(background-color);
+            background: base.dark(dark-desaturated-blue);
+
+            @media (hover:hover) {
             &:hover {
-                background: rgb(224, 228, 243);
-                transition: background-color 0.4s ease-in-out;
+                @include base.transition(background-color);
+                background: base.dark(hover);
+            }
+        }
+        }
+
+        @media (hover:hover) {
+            &:hover {
+                @include base.transition(background-color);
+                background: base.light(hover);
             }
         }
     }
@@ -160,17 +232,29 @@ section h2 {
 }
 
 .overview {
+    @include base.transition(background-color);
     margin-bottom: 1em;
     border-radius: 7.5px;
     background: base.light(light-grayish-blue);
     -webkit-tap-highlight-color: transparent;
-    transition: background-color 0.4s ease-in-out;
     cursor: pointer;
 
-    @media (hover:hover){
+    &.dark {
+        @include base.transition(background-color);
+        background: base.dark(dark-desaturated-blue);
+
+        @media (hover:hover) {
+            &:hover {
+                @include base.transition(background-color);
+                background: base.dark(hover);
+            }
+        }
+    }
+
+    @media (hover:hover) {
         &:hover {
-            background: rgb(224, 228, 243);
-            transition: background-color 0.4s ease-in-out;
+            @include base.transition(background-color);
+            background: base.light(hover);
         }
     }
 
@@ -236,6 +320,10 @@ section h2 {
             .toggle {
                 width: 1.75em;
                 height: 1.75em;
+
+                &.dark {
+                    margin-right: 0.5em;
+                }
             }
         }
     }

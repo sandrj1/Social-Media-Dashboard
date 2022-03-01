@@ -42,12 +42,11 @@ const socialData = [
         'newData': 144,
         'arrow': iconDown
     }
-]
+];
 
 const Social = () => {
     return (socialData.map((item, index) => {
         const socialCards = `
-        
         <article class='social' key = '${index}'>
         <div class='social__border social__border--${item.name}'></div>
         <div class='social__box'>
@@ -67,7 +66,6 @@ const Social = () => {
         </div>
         </article>
         `;
-
         return socialCards;
     })).join('');
 }

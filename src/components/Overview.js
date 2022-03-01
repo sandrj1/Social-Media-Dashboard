@@ -62,9 +62,7 @@ const overviewData = [
         'arrow': iconDown,
         'percentage': '12%'
     }
-]
-
-console.log(overviewData.length)
+];
 
 const Overview = () => {
     return (overviewData.map((item, index) => {
