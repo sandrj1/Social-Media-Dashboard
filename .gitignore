@@ -1,9 +1,11 @@
-node_modules
+
 *.sketch
 *.xd
 *.fig
 .DS_Store
 
-*.md
+node_modules
+.cache/
 development
-.cache
+dist
+*.md
