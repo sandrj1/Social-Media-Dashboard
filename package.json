@@ -1,9 +1,12 @@
 {
+  "homepage": "https://sandrj1.github.io/Social-Media-Dashboard",
   "name": "social-media-dashboard",
   "version": "1.0.0",
   "description": "![Design preview for the Social media dashboard with theme switcher coding challenge](./design/desktop-preview.jpg)",
   "main": "index.js",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "dev": "parcel public/index.html --out-dir development -p 3000",
     "build": "parcel build public/index.html --out-dir dist --public-url ./"
   },
@@ -14,6 +17,7 @@
     "@babel/core": "^7.17.5",
     "@babel/plugin-transform-runtime": "^7.17.0",
     "@babel/runtime-corejs2": "^7.17.2",
+    "gh-pages": "^3.2.3",
     "parcel-bundler": "^1.12.5",
     "sass": "^1.49.9"
   },
