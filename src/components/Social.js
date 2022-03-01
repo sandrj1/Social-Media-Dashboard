@@ -47,7 +47,10 @@ const socialData = [
 const Social = () => {
     return (socialData.map((item, index) => {
         const socialCards = `
-        <article class='social social--${item.name}' key = '${index}'>
+        
+        <article class='social' key = '${index}'>
+        <div class='social__border social__border--${item.name}'></div>
+        <div class='social__box'>
             <div class='social__handle'>
                 <img src='${item.icon}' alt=''>
                 <p>${item.handle}</p>
@@ -61,6 +64,7 @@ const Social = () => {
                 : 'arrow--green'}'>
                 ${item.newData} Today</p>
             </div>
+        </div>
         </article>
         `;
 

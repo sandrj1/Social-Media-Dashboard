@@ -64,10 +64,14 @@ const overviewData = [
     }
 ]
 
+console.log(overviewData.length)
+
 const Overview = () => {
     return (overviewData.map((item, index) => {
         const overviewCards = `
-        <article class='overview' key = '${index}'>
+        <article class='${index === overviewData.length - 1
+                ? 'overview overview--last'
+                : 'overview'}'' key = '${index}'>
             <div class='overview__title'>
                 <p>${item.title}</p>
                 <img src='${item.icon}' alt=''>

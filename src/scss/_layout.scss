@@ -3,25 +3,36 @@
 
 body {
     @include base.flexCenter(center, column);
+    
 }
 
 .container {
     @include base.flexCenter(center, column);
-    width: 87.5%;
-    margin: 2em 0;
+    width: 100%;
 }
 
-header, main {
+header {
+    @include base.flexCenter(center, column);
     width: 100%;
+    padding: 2.5em 6.25%;
+
+    .#{&}__title, .#{&}__switcher {
+        width: 100%;
+    }
 }
 
 .header__switcher {
     @include base.flexCenter(space-between, row);
-    margin: 1.5em 0 3em;
+    margin: 1.5em 0 3.5em;
 
     .toggle__container {
         @include base.flexCenter(flex-end, row);
     }
+}
+
+main {
+    width: 87.5%;
+    transform: translateY(-3em);
 }
 
 .social__container, .overview__container {
@@ -34,6 +45,10 @@ article {
 }
 
 .social {
+    #{&}__box {
+        @include base.flexCenter(center,column);
+        width: 100%;
+    }
     #{&}__handle, #{&}__updates {
         @include base.flexCenter(center, row);
     }
@@ -47,5 +62,31 @@ article {
 
     #{&}__percentage {
         @include base.flexCenter(center, row);
+    }
+}
+
+// Desktop version
+@media screen and (min-width: 768px) {
+    .container {
+        @include base.flexCenter(flex-start, column);
+        min-height: 100vh;
+        margin: 0;
+    }
+
+    header {
+        @include base.flexCenter(space-between, row);
+        margin-bottom: -7.5em;
+        padding: 3.5em 6.25% 10em;
+
+        .#{&}__switcher {
+            @include base.flexCenter(flex-end, row);
+        }
+    }
+
+    .social__container, .overview__container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        row-gap: 1.25em;
+        column-gap: 2.25em;
     }
 }
