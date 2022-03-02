@@ -67,9 +67,9 @@ const overviewData = [
 const Overview = () => {
     return (overviewData.map((item, index) => {
         const overviewCards = `
-        <article class='${index === overviewData.length - 1
+        <article class=${index === overviewData.length - 1
                 ? 'overview overview--last'
-                : 'overview'}'' key = '${index}'>
+                : 'overview'}>
             <div class='overview__title'>
                 <p>${item.title}</p>
                 <img src='${item.icon}' alt=''>
@@ -78,9 +78,9 @@ const Overview = () => {
                 <h3>${item.count}</h3>
                 <div class='overview__percentage'>
                     <img src='${item.arrow}' alt=''>
-                    <p class='${item.arrow === iconDown
+                    <p class=${item.arrow === iconDown
                     ? 'arrow--red'
-                    : 'arrow--green'}'>
+                    : 'arrow--green'}>
                     ${item.percentage}</p>
                 </div>
             </div>
