@@ -1,8 +1,11 @@
 /* everything that is reusable – buttons, navbars, cards, and so on */
 
-@use './base';
+@forward './components/general';
+@forward './components/header';
+@forward './components/social';
+@forward './components/overview';
 
-// General
+/* // General
 .container {
     @include base.transition(background-color);
     background: base.light(color-white);
@@ -291,10 +294,10 @@ section h2 {
 
 .overview--last {
         margin-bottom: 0;
-    }
+    } */
 
 // Desktop version
-@media screen and (min-width: 768px) {
+/* @media screen and (min-width: 768px) {
     .header__title {
         border-bottom: none;
 
@@ -397,4 +400,4 @@ section h2 {
     .overview--last {
         margin-bottom: 1em;
     }
-}
+} */

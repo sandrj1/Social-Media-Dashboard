@@ -1,0 +1,120 @@
+@use '../base';
+
+.social {
+    margin-bottom: 1.5em;
+    border-radius: 7.5px;
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
+
+    #{&}__border {
+        height: 5px;
+        width: 100%;
+        border-top-left-radius: 7.5px;
+        border-top-right-radius: 7.5px;
+
+        &--facebook {
+            background: base.$facebook;
+        }
+
+        &--twitter {
+            background: base.$twitter;
+        }
+
+        &--instagram {
+            background: linear-gradient(to right, base.$instagram-left, base.$instagram-right);
+        }
+
+        &--youtube {
+            background: base.$youtube;
+        }
+    }
+
+    #{&}__box {
+        @include base.transition(background-color);
+        border-bottom-left-radius: 7.5px;
+        border-bottom-right-radius: 7.5px;
+        background: base.light(light-grayish-blue);
+
+        &.dark {
+            @include base.transition(background-color);
+            background: base.dark(dark-desaturated-blue);
+
+            @media (hover:hover) {
+            &:hover {
+                @include base.transition(background-color);
+                background: base.dark(hover);
+            }
+        }
+        }
+
+        @media (hover:hover) {
+            &:hover {
+                @include base.transition(background-color);
+                background: base.light(hover);
+            }
+        }
+    }
+
+    #{&}__handle {
+        margin: 2em 0 1.25em;
+
+        img {
+            margin-right: 0.5em;
+        }
+    }
+
+    h2 {
+        font-size: 3.75em;
+    }
+
+    #{&}__description {
+        margin-bottom: 2em;
+        font-weight: base.weight(default);
+        text-transform: uppercase;
+        letter-spacing: 0.3em;
+    }
+
+    #{&}__updates {
+        margin-bottom: 2em;
+
+        img {
+            margin-right: 0.35em;
+        }
+
+        .arrow--green {
+            color: base.$lime-green;
+        }
+
+        .arrow--red {
+            color: base.$bright-red;
+        }
+    }
+
+    @include base.breakpoint(laptop){
+        p {
+            font-size: 1.2em;
+        }
+
+        #{&}__handle {
+            margin-top: 2.5em;
+            img {
+                width: 25px;
+                height: 25px;
+                margin-right: 0.75em;
+            }
+        }
+
+        h2 {
+            font-size: 4.5em;
+        }
+
+        #{&}__description {
+            margin-bottom: 1.75em;
+            font-size: 1.2em;
+        }
+
+        #{&}__updates {
+            margin-bottom: 2em;
+        }
+    }
+}

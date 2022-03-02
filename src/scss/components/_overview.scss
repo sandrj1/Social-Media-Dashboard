@@ -1,0 +1,109 @@
+@use '../base';
+
+section {
+    h2 {
+        margin: 0.75em 0 1em;
+        font-size: 1.75em;
+        color: base.light(dark-grayish-blue);
+    }
+
+    @include base.breakpoint(laptop){
+        h2 {
+            margin: 1.25em 0 1.1em;
+            font-size: 2em;
+        }
+    }
+}
+
+.overview {
+    @include base.transition(background-color);
+    margin-bottom: 1em;
+    border-radius: 7.5px;
+    background: base.light(light-grayish-blue);
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
+
+    &.dark {
+        @include base.transition(background-color);
+        background: base.dark(dark-desaturated-blue);
+
+        @media (hover:hover) {
+            &:hover {
+                @include base.transition(background-color);
+                background: base.dark(hover);
+            }
+        }
+    }
+
+    @media (hover:hover) {
+        &:hover {
+            @include base.transition(background-color);
+            background: base.light(hover);
+        }
+    }
+
+    #{&}__title {
+        margin: 1.8em 0 1.5em;
+
+        p {
+            font-size: 1.05em;
+        }
+    }
+
+    #{&}__numbers {
+        margin-bottom: 1.5em;
+
+        h3 {
+            font-size: 2.25em;
+        }
+    }
+
+    #{&}__percentage {
+        img {
+            margin-right: 0.35em;
+        }
+
+        .arrow--green {
+            color: base.$lime-green;
+        }
+
+        .arrow--red {
+            color: base.$bright-red;
+        }
+    }
+
+    @include base.breakpoint(laptop){
+        #{&}__title {
+            width: 80%;
+            margin-top: 2.25em;
+            p {
+                font-size: 1.25em;
+            }
+
+            img {
+                width: 25px;
+                height: 25px;
+            }
+        }
+
+        #{&}__numbers {
+            width: 80%;
+
+            h3 {
+                font-size: 2.75em;
+            }
+
+            p {
+                font-size: 1.2em;
+            }
+        }
+    }
+}
+
+.overview--last {
+        margin-bottom: 0;
+
+        @include base.breakpoint(laptop){
+            margin-bottom: 1em;
+        }
+    }

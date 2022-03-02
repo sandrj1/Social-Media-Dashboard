@@ -1,0 +1,38 @@
+@use '../base';
+
+.container {
+    @include base.transition(background-color);
+    background: base.light(color-white);
+
+    &.dark {
+        @include base.transition(background-color);
+        background: base.dark(very-dark-blue);
+    }
+
+    h1, h2, h3 {
+        @include base.transition(color);
+        color: base.light(very-dark-blue);
+    }
+
+    h1.dark, h2.dark, h3.dark {
+        @include base.transition(color);
+        color: base.dark(color-white);
+    }
+
+    p {
+        @include base.transition(color);
+        font-weight: base.weight(bold);
+        color: base.light(dark-grayish-blue);
+
+        &.dark {
+            @include base.transition(color);
+            color: base.dark(desaturated-blue);
+        }
+    }
+
+    @include base.breakpoint(laptop){
+        main {
+            margin-top: 1.5em;
+        }
+    }
+}
