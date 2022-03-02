@@ -33,12 +33,24 @@ section {
                 background: base.dark(hover);
             }
         }
+
+        @media (hover:none) {
+            &:hover {
+                background: base.dark(dark-desaturated-blue);
+            }
+        }
     }
 
     @media (hover:hover) {
         &:hover {
             @include base.transition(background-color);
             background: base.light(hover);
+        }
+    }
+
+    @media (hover:none) {
+        &:hover {
+            background: base.light(light-grayish-blue);
         }
     }
 

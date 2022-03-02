@@ -44,6 +44,12 @@
                 @include base.transition(background-color);
                 background: base.dark(hover);
             }
+
+            @media (hover: none) {
+                &:hover {
+                    background: base.dark(dark-desaturated-blue);
+                }
+            }
         }
         }
 
@@ -51,6 +57,12 @@
             &:hover {
                 @include base.transition(background-color);
                 background: base.light(hover);
+            }
+        }
+
+        @media (hover: none) {
+            &:hover {
+                background: base.light(light-grayish-blue);
             }
         }
     }
