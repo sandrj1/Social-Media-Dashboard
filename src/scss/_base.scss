@@ -44,7 +44,6 @@ $font-weights: (
     'bold': 700
 );
 
-
 /* Functions */
 @function dark($color-name) {
     @return map-get($dark-theme, $color-name );

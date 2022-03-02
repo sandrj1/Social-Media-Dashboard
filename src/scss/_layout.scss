@@ -137,30 +137,3 @@ article {
         } 
     }
 }
-
-/* 
-
-@include base.breakpoint(desktop){
-        @include base.flexCenter(flex-start, column);
-        min-height: 100vh;
-        margin: 0;
-    
-        header {
-            @include base.flexCenter(space-between, row);
-            margin-bottom: -7.5em;
-            padding: 3.5em 6.25% 10em;
-
-            .header__switcher {
-                @include base.flexCenter(flex-end, row);
-            }
-        }
-
-        .social__container, .overview__container {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-            row-gap: 1.25em;
-            column-gap: 2.25em;
-        }   
-    }    
-
-*/
